@@ -67,11 +67,7 @@ __gradle-generate-script-cache() {
 __gradle-generate-tasks-cache() {
     __gradle-set-files-checksum
 
-    # Use Gradle wrapper when it exists.
     local gradle_cmd="gradle"
-    if [[ -x "$project_root_dir/gradlew" ]]; then
-        gradle_cmd="$project_root_dir/gradlew"
-    fi
 
     zle -R "Generating Gradle task cache from $gradle_build_file"
 
